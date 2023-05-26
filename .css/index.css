@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*HEADER*/
+
+header
+{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+    display: block;
+    justify-content: center;
+    background: white;
+}
+.Logo img
+{
+    padding-left: 50px;
+    height: 70px;
+}
+
+.Body
+{
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.boton
+{
+    padding-right: 100px;
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    color: black;
+    letter-spacing: 4px;
+    font-size: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.boton:hover
+{
+    background: #698E8E;
+    box-shadow: 0 0 10px #698E8E, 0 0 40px #698E8E, 0 0 80px #698E8E;
+    transition-delay: 1s;
+}
+
+.boton span
+{
+    position: absolute;
+    display: block;
+}
+#span1{
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#698E8E);
+}
+.boton:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+#span3{
+    bottom:0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#698E8E);
+}
+.boton:hover #span3{
+    right: 100%;
+    transition: 1s;
+}
+
+/*FOOTER*/
+.pie-pagina{
+    width: 100%;
+    background-color: #545454;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #343333;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #698E8E;
+}
+.pie-pagina .grupo-2{
+    background-color: #343333;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+  
+/*SLIDER*/
+.slider
+{
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.slides
+{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+  
+.slides input
+{
+    display: none;
+}
+  
+.slide
+{
+    width: 20%;
+    transition: 2s;
+}
+  
+.slide img
+{
+    width: 100%;
+    height: 100%;
+}
+    
+.navigation-auto
+{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 815px;
+}
+  
+.navigation-auto div
+{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+  
+.navigation-auto div:not(:last-child)
+{
+    margin-right: 40px;
+}
+  
+#radio1:checked ~ .navigation-auto .auto-btn1
+{
+    background: white;
+}
+  
+#radio2:checked ~ .navigation-auto .auto-btn2
+{
+    background: white;
+  }
+  
+#radio3:checked ~ .navigation-auto .auto-btn3
+{
+    background: white;
+}
+  
+#radio4:checked ~ .navigation-auto .auto-btn4
+{
+    background: white;
+}
+
+.navigation-manual
+{
+    position: absolute;
+    width: 100%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}
+  
+.manual-btn
+{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+  
+.manual-btn:not(:last-child)
+{
+    margin-right: 40px;
+}
+  
+.manual-btn:hover
+{
+    background: white;
+}
+  
+#radio1:checked ~ .first
+{
+    margin-left: 0;
+}
+  
+#radio2:checked ~ .first
+{
+    margin-left: -20%;
+}
+  
+#radio3:checked ~ .first
+{
+    margin-left: -40%;
+}
+  
+#radio4:checked ~ .first
+{
+    margin-left: -60%;
+}
+        
