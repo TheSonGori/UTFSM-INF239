@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>PrestigeTravels</title>
     <link rel="stylesheet" href=".css/index.css">
+    <title>PrestigeTravels</title>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
   </head>
@@ -13,7 +14,7 @@
             <img src="Images/LOGO.jpg" alt="Logo PrestigeTravels">
         </div>
         
-        <a href="#" class="boton">
+        <a href="inicio.php" class="boton">
             <span id="span1"></span>
             <span id="span2"></span>
             <span id="span3"></span>
