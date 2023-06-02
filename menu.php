@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+
+ if(!isset($_SESSION['usuario'])){
+  header("location: index.php");
+  session_destroy();
+  die();
+ }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +25,7 @@
 <body>
   <header>
     <div class="Logo">
-      <img src="Images/LOGO.jpg" alt="Logo PrestigeTravels">
+      <img src=".imagenes/menu/LOGO.jpg" alt="PrestigeTravels">
     </div>
 
     <div class="Navigation">

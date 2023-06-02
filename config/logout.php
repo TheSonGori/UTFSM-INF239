@@ -1,8 +1,11 @@
-<?php 
-session_start();
+<?php
+// Iniciar sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-session_unset();
+// Destruir la sesión y redirigir al usuario a index.php
 session_destroy();
-
 header("Location: ../index.php");
+exit();
 ?>

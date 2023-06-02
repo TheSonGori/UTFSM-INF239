@@ -1,36 +1,24 @@
 <?php
-include("config.php");
+    include("config.php");
 
-session_start();
+    $correo = $_POST['cuenta_email'];
+    $contra = $_POST['cuenta_contrasena'];
 
-if (isset($_POST['login'])) {
-    if (isset($_POST['email']) && isset($_POST['password'])) {
-        $email = trim($_POST['email']);
-        $password = trim($_POST['password']);
-        
-        // Verificar si las credenciales son correctas
-        $consulta = "SELECT * FROM users WHERE email='$email' AND passwordd='$password'";
-        $resultado = mysqli_query($conex, $consulta);
+    $validar = mysqli_query($conex, "SELECT * FROM users WHERE 
+    email='$correo' AND passwordd='$contra'");
 
-        if (mysqli_num_rows($resultado) > 0) {
-            // Inicio de sesión exitoso
-            $_SESSION['email'] = $email;
-            
-            header("Location: ../home.php");
-            exit();
-        } else {
-            ?>
-                <h3 class="error">Credenciales inválidas</h3>
-            <?php
-        }
-    } else {
-        ?>
-            <h3 class="error">Por favor, ingresa tu email y contraseña</h3>
-        <?php
+    if(mysqli_num_rows($validar) > 0){
+        $_SESSION['usuario'] = $correo;
+        header("location: ../menu.php");
+        exit;
+    }else{
+        echo '
+            <script>
+                alert("Usuario no existe, porfavor verifique los datos.");
+                window.location = "../index.php";
+            </script>    
+            ';
+        exit;
     }
-}
+
 ?>
-
-
-
-
