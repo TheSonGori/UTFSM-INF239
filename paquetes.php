@@ -10,7 +10,6 @@
   
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +29,8 @@
 
     <div class="Navigation">
       <ul>
-        <li class="list active">
-          <a href="menu.php">
+        <li class="list">
+          <a href="menu.php" >
             <span class="icon">
               <ion-icon name="search-outline"></ion-icon>
             </span>
@@ -39,8 +38,8 @@
           </a>
         </li>
   
-        <li class="list">
-          <a href="paquetes.php">
+        <li class="list active">
+          <a href="paquetes.php" >
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
@@ -49,7 +48,7 @@
         </li>
   
         <li class="list">
-          <a href="ofertas.php">
+          <a href="ofertas.php" >
             <span class="icon">
               <ion-icon name="rocket-outline"></ion-icon>
             </span>
@@ -58,7 +57,7 @@
         </li>
   
         <li class="list">
-          <a href="carrito.php">
+          <a href="carrito.php" >
             <span class="icon">
               <ion-icon name="cart-outline"></ion-icon>
             </span>
