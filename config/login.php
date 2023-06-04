@@ -15,10 +15,11 @@
 
         $usuario = mysqli_fetch_assoc($validar);
 
+        $id = $usuario['Id_User'];
         $nombre = $usuario['username'];
-        $cumpleanos = $usuario['birthday'];
+        $birthday = $usuario['birthday'];
 
-
+        $_SESSION['id'] = $id;
         $_SESSION['email'] = $correo;
         $_SESSION['usuario'] = $nombre;
         $_SESSION['birthday'] = $birthday;

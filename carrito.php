@@ -7,13 +7,8 @@
     header("Location: index.php");
     exit;
   }
-
-
-  require_once "db.php";
-
-  $carrito = $_SESSION["carrito"];
+  
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href=".css/Navegator.css">
-  <link rel="stylesheet" href=".css/carrito.css">
-
-  <title>Carrito</title>
+  <title>PrestigeTravels</title>
 
 </head>
 <body>
@@ -85,58 +78,7 @@
     </div>
 
   </header>
-
-
-<div class="center-rectangle">
-
-<?php
-
-require_once "db.php";
-
-$carrito = $_SESSION["carrito"];
-?>
-
-<html>
-
-<body style="text-align:center;">
-  
-        <?php
-        if(isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])){
-            foreach ($carrito as $producto_id => $cantidad) {
-                
-                $query = "SELECT * FROM bodega WHERE id = $producto_id";
-                $resultado = $conexion->query($query);
-                if ($resultado->num_rows > 0) {
-                    $producto = $resultado->fetch_assoc();
-                    
-                    echo "<h2>".$producto['titulo']."<h2>";
-                    echo "<p>Valor: ".$producto['precio']."</p>";
-                    echo "<hr>";
-                    
-                }
-            }
-        }
-        else echo "El carrito esta vacio";
-
-        ?>
-    <form method="post">
-        <input type="submit" name="comprar" value="Comprar">
-    </form>
-</body>
-</html>
-
-<?php
-
-if (isset($_POST["comprar"])){
-    echo "Compra realizada";
-    unset($_SESSION["carrito"]);
-}
-
-?>
-</div>
-
-
-
+ 
   
   <script>
     const list = document.querySelectorAll('.list');
@@ -154,6 +96,3 @@ if (isset($_POST["comprar"])){
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-
-
-

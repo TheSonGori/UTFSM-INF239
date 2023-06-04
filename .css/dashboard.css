@@ -178,15 +178,26 @@
     white-space: nowrap;
 }
 
+.user-photo {
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 280px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 .center-rectangle {
-    width: 1000px; /* Ancho del rectángulo */
-    height: 600px; /* Alto del rectángulo */
+    display: inline-block;
     background-color: transparent; /* Color de fondo del rectángulo */
-    border: 2px solid black; /* Borde delgado y negro */
+    border: 2px solid #9F9F9F; /* Borde delgado y negro */
     border-radius: 5px;
+    padding: 20px; /* Espacio interno para separar el contenido del borde */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+    text-align: center;
+  }
+  

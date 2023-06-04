@@ -29,7 +29,7 @@
                 $name = trim($_POST['name']);
                 $email = trim($_POST['email']);
                 $password = trim($_POST['password']);
-                $date = date('D-m-y', strtotime($_POST['dateofbirthday']));
+                $date = date('Y-m-d', strtotime($_POST['dateofbirthday']));
 
                 // Verificar si el email ya existe en la base de datos
                 $consulta = "SELECT * FROM users WHERE email='$email'";

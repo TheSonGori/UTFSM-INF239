@@ -22,8 +22,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href=".css/Navegator.css">
-  <link rel="stylesheet" href=".css/dashboard.css">
+  <link rel="stylesheet" href="../.css/Navegator.css">
+  <link rel="stylesheet" href="../.css/dashboard.css">
+
 
   <title>PrestigeTravels</title>
 
@@ -47,13 +48,13 @@
 <body>
 <header>
     <div class="Logo">
-      <img src=".imagenes/menu/LOGO.jpg" alt="PrestigeTravels">
+      <img src="../.imagenes/menu/LOGO.jpg" alt="PrestigeTravels">
     </div>
 
     <div class="Navigation">
       <ul>
         <li class="list">
-          <a href="menu.php" >
+          <a href="../menu.php" >
             <span class="icon">
               <ion-icon name="search-outline"></ion-icon>
             </span>
@@ -62,7 +63,7 @@
         </li>
   
         <li class="list">
-          <a href="paquetes.php" >
+          <a href="../paquetes.php" >
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
@@ -71,7 +72,7 @@
         </li>
   
         <li class="list">
-          <a href="ofertas.php">
+          <a href="../ofertas.php">
             <span class="icon">
               <ion-icon name="rocket-outline"></ion-icon>
             </span>
@@ -80,7 +81,7 @@
         </li>
   
         <li class="list">
-          <a href="carrito.php">
+          <a href="../carrito.php">
             <span class="icon">
               <ion-icon name="cart-outline"></ion-icon>
             </span>
@@ -89,7 +90,7 @@
         </li>
   
         <li class="list active">
-          <a href="perfil.php" >
+          <a href="../perfil.php" >
             <span class="icon">
               <ion-icon name="person-outline"></ion-icon>
             </span>
@@ -105,37 +106,37 @@
     <div class="a-navigation">
         <ul class="ul">
             <li class="li">
-                <a class="a-dashboard" href="perfil.php">
+                <a class="a-dashboard" href="../perfil.php">
                     <span class="a-icon"><ion-icon name="person"></ion-icon></span>
                     <span class="a-title">Mi Perfil</span>
                 </a>
             </li>
             <li class="li">
-                <a class="a-dashboard" href="perfil/wishlist.php">
+                <a class="a-dashboard" href="wishlist.php">
                     <span class="a-icon"><ion-icon name="options"></ion-icon></span>
                     <span class="a-title">WishList</span>
                 </a>
             </li>
             <li class="li">
-                <a class="a-dashboard" href="perfil/reviews.php">
+                <a class="a-dashboard" href="reviews.php">
                     <span class="a-icon"><ion-icon name="chatbubble-ellipses"></ion-icon></span>
                     <span class="a-title">Reseñas</span>
                 </a>
             </li>
             <li class="li">
-                <a class="a-dashboard" href="perfil/shopping.php">
+                <a class="a-dashboard" href="shopping.php">
                     <span class="a-icon"><ion-icon name="wallet"></ion-icon></span>
                     <span class="a-title">Historial de Compras</span>
                 </a>
             </li>
             <li class="li">
-                <a class="a-dashboard" href="perfil/settings.php">
+                <a class="a-dashboard" href="settings.php">
                     <span class="a-icon"><ion-icon name="cog"></ion-icon></span>
                     <span class="a-title">Configuracion</span>
                 </a>
             </li>
             <li class="li">
-                <a class="a-dashboard" href="config/logout.php">
+                <a class="a-dashboard" href="../config/logout.php">
                     <span class="a-icon"><ion-icon name="person-remove"></ion-icon></span>
                     <span class="a-title">Cerrar Sesion</span>
                 </a>
@@ -144,15 +145,6 @@
         <div class="toggle"></div>
     </div>
     </div>
-
-  <img src=".imagenes/perfil/USER.png" alt="Foto de perfil" class="user-photo">
-  <div class="center-rectangle">
-    <h1><b><?php echo $nombre; ?></b></h1>
-    <h2><b>Correo:</b> <?php echo $correo; ?></h2>
-    <h2><b>Cumpleaños (Año - Mes - Día):</b> <?php echo $cumple; ?></h2>
-  </div>
-
-
 
 
   
@@ -167,8 +159,8 @@
     item.addEventListener('click', activeLink));
   </script>
 
-  <script src=".js/transition.js"></script>
-  <script src=".js/perfil.js"></script>
+  <script src="../.js/transition.js"></script>
+  <script src="../.js/perfil.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

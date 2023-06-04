@@ -12,13 +12,14 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 15vh;
     background: #fff;
 }
 
 header
 {
-    position: fixed;
-    display: block;
+    z-index: 999;
+    display: flex;
     justify-content: space-between;
 }
 
