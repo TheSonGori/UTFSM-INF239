@@ -18,7 +18,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href=".css/Navegator.css">
-  <title>PrestigeTravels</title>
+  <link rel="stylesheet" href=".css/paquetes.css">
+  
+  <title>Paquetes</title>
 
 </head>
 <body>
@@ -78,7 +80,30 @@
     </div>
 
   </header>
- 
+
+
+<div class="center-rectangle">
+
+
+<?php
+
+require_once "db.php";
+
+$query = "SELECT * FROM bodega";
+$result = $conexion->query($query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<h2>".$row['titulo']."</h2>";
+    echo "<h3>".$row['datos']."</h3>";
+    echo "<h3>Cantidad: ".$row['cantidad']."</h3>";
+    echo "<p>Precio: ".$row['precio']."</p>";
+    echo "<td><a href='add_carrito.php?id=" . $row["id"] . "'>Agregar al carrito</a></td>";
+    echo "<hr>";
+}
+
+?>
+</div>
+
   
   <script>
     const list = document.querySelectorAll('.list');
