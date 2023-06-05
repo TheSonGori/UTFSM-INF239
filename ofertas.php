@@ -18,6 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href=".css/Navegator.css">
+  <link rel="stylesheet" href=".css/ofertas.css">
   <title>PrestigeTravels</title>
 
 </head>
@@ -78,7 +79,9 @@
     </div>
 
   </header>
- 
+
+  <?php include("config/offers.php");?>
+
   
   <script>
     const list = document.querySelectorAll('.list');

@@ -191,7 +191,7 @@
 .center-rectangle {
     display: inline-block;
     background-color: transparent; /* Color de fondo del rectángulo */
-    border: 2px solid #9F9F9F; /* Borde delgado y negro */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px; /* Espacio interno para separar el contenido del borde */
     position: absolute;
@@ -200,4 +200,3 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  

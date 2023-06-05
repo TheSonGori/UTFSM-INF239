@@ -18,6 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href=".css/Navegator.css">
+  <link rel="stylesheet" href=".css/carrito.css">
   <title>PrestigeTravels</title>
 
 </head>
@@ -78,6 +79,10 @@
     </div>
 
   </header>
+
+  <div class="carrito-center">
+    <h1>Alo</h1>
+  </div>
  
   
   <script>

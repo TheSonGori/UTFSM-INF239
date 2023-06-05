@@ -1,26 +1,18 @@
 <?php
-    include("../config/config.php");
 
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
 
-    $id = $_SESSION['id'];
-
-    // Obtener los datos actuales del usuario
-    $consulta = mysqli_query($conex, "SELECT * FROM users WHERE Id_User='$id'");
-    $usuario = mysqli_fetch_assoc($consulta);
-
-    // Verificar si se ha enviado el formulario de actualización
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Obtener los datos enviados por el formulario
-        $nombre = $_POST['nombre'];
-        $contrasena = $_POST['contrasena'];
-        $cumpleanos = $_POST['cumpleanos'];
-
-        // Actualizar los datos del usuario en la base de datos
-        $actualizar = mysqli_query($conex, "UPDATE users SET username='$nombre', passwordd='$contrasena', birthday='$cumpleanos' WHERE Id_User='$id'");
-    }
+  if (!isset($_SESSION['usuario'])) {
+    header("Location: index.php");
+    exit;
+  }else{
+    $nombre = $_SESSION['usuario'];
+    $correo =  $_SESSION['email'];
+    $cumple = $_SESSION['birthday'];
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -157,35 +149,38 @@
 
     <div class="settings-center">
       <div class="form_container">
-            <div class="input_box">
-              <label>Nombre:</label>
-              <input type="text" name="nombre" value="<?php echo $usuario['username']; ?>"><br>
-            </div>
+        <form method="POST" action="../config/profile.php">
+          <div class="input_box">
+            <label>Nombre:</label>
+            <input type="text" name="name" value="<?php echo $nombre; ?>" required><br>
+          </div>
 
-            <div class="input_box">
-              <label>Contraseña:</label>
-              <input type="password" name="contrasena" value=""><br>
-            </div>
+          <div class="input_box">
+            <label>Correo:</label>
+            <input type="email" name="email" value="<?php echo $correo; ?>" required><br>
+          </div>
 
-            <div class="input_box">
-              <label>Cumpleaños:</label>
-              <input type="date" name="cumpleanos" value="<?php echo $usuario['birthday']; ?>"><br>
-            </div>
+          <div class="input_box">
+            <label>Contraseña:</label>
+            <input type="password" name="password" required><br>
+          </div>
 
-            <div class="button_wrapper">
-              <div class="button">
-                <span>Actualizando</span>
-                <div class="progress_bar"></div>
-              </div>
-            </div>
+          <div class="input_box">
+            <label>Cumpleaños:</label>
+            <input type="date" name="dateofbirthday" value="<?php echo $cumple; ?>" required><br>
+          </div>
 
-            
+          <div class="button_wrapper">
+            <input type="submit" class="button" name="Actualizar" id="Actualizar" value="Actualizar"/>
+            <div class="progress_bar"></div>
+          </div>
+        </form>
+
         <form method="POST" action="../config/delete.php" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">
             <span class="delete-button" onclick="this.parentNode.submit();">Eliminar Usuario</span>
         </form>
       </div>
-
-
+    
     </div>
 
   

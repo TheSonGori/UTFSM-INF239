@@ -42,6 +42,7 @@
                     $consulta = "INSERT INTO users (username, email, passwordd, birthday) 
                         VALUES ('$name', '$email', '$password', '$date')";
                     $resultado = mysqli_query($conex, $consulta);
+                    
 
                     if ($resultado) {
                         $alertType = 'success';
