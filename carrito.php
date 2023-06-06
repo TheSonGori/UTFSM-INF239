@@ -83,7 +83,53 @@
   <div class="carrito-center">
     <h1>Alo</h1>
   </div>
- 
+<div class="carrito-center">
+
+<?php
+
+require_once "db.php";
+
+$carrito = $_SESSION["carrito"];
+?>
+
+<html>
+
+<body style="text-align:center;">
+  
+        <?php
+        if(isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])){
+            foreach ($carrito as $producto_id => $cantidad) {
+                
+                $query = "SELECT * FROM bodega WHERE id = $producto_id";
+                $resultado = $conexion->query($query);
+                if ($resultado->num_rows > 0) {
+                    $producto = $resultado->fetch_assoc();
+                    
+                    echo "<h2>".$producto['titulo']."<h2>";
+                    echo "<p>Valor: ".$producto['precio']."</p>";
+                    echo "<hr>";
+                    
+                }
+            }
+        }
+        else echo "El carrito esta vacio";
+
+        ?>
+    <form method="post">
+        <input type="submit" name="comprar" value="Comprar">
+    </form>
+</body>
+</html>
+
+<?php
+
+if (isset($_POST["comprar"])){
+    echo "Compra realizada";
+    unset($_SESSION["carrito"]);
+}
+
+?>
+</div>
   
   <script>
     const list = document.querySelectorAll('.list');
