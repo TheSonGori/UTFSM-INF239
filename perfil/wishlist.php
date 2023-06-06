@@ -24,6 +24,7 @@
 
   <link rel="stylesheet" href="../.css/Navegator.css">
   <link rel="stylesheet" href="../.css/dashboard.css">
+  <link rel="stylesheet" href=".css/wishlist.css" />
 
 
   <title>PrestigeTravels</title>
@@ -146,7 +147,53 @@
     </div>
     </div>
 
+<div class="wishlist-center">
 
+<?php
+
+require_once "db.php";
+
+$carrito = $_SESSION["carrito"];
+?>
+
+<html>
+
+<body style="text-align:center;">
+  
+        <?php
+        if(isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])){
+            foreach ($carrito as $producto_id => $cantidad) {
+                
+                $query = "SELECT * FROM bodega WHERE id = $producto_id";
+                $resultado = $conexion->query($query);
+                if ($resultado->num_rows > 0) {
+                    $producto = $resultado->fetch_assoc();
+                    
+                    echo "<h2>".$producto['titulo']."<h2>";
+                    echo "<p>Valor: ".$producto['precio']."</p>";
+                    echo "<hr>";
+                    
+                }
+            }
+        }
+        else echo "El carrito esta vacio";
+
+        ?>
+    <form method="post">
+        <input type="submit" name="comprar" value="Comprar">
+    </form>
+</body>
+</html>
+
+<?php
+
+if (isset($_POST["comprar"])){
+    echo "Compra realizada";
+    unset($_SESSION["carrito"]);
+}
+
+?>
+</div>
   
   <script>
     const list = document.querySelectorAll('.list');
