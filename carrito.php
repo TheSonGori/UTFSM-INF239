@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href=".css/Navegator.css">
   <link rel="stylesheet" href=".css/carrito.css">
-  <title>PrestigeTravels</title>
+  <title>Carrito | PrestigeTravels</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
-            <span class="text">Paquetes</span>
+            <span class="text">Top 10</span>
           </a>
         </li>
   

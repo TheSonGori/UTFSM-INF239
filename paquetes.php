@@ -1,4 +1,6 @@
 <?php
+  include("config/config.php");
+
   if (session_status() == PHP_SESSION_NONE) {
     session_start();
   }
@@ -6,8 +8,12 @@
   if (!isset($_SESSION['usuario'])) {
     header("Location: index.php");
     exit;
+  }else{
+    $id = $_SESSION['id'];
+    $nombre = $_SESSION['usuario'];
+    $correo =  $_SESSION['email'];
+    $cumple = $_SESSION['birthday'];
   }
-  
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +25,8 @@
 
   <link rel="stylesheet" href=".css/Navegator.css">
   <link rel="stylesheet" href=".css/paquetes.css">
-  <title>PrestigeTravels</title>
+
+  <title>Paquetes | PrestigeTravels</title>
 
 </head>
 <body>
@@ -44,7 +51,7 @@
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
-            <span class="text">Paquetes</span>
+            <span class="text">Top 10</span>
           </a>
         </li>
   
@@ -79,6 +86,19 @@
     </div>
 
   </header>
+<<<<<<< HEAD
+
+  <div class="paquetes-center">
+    <h1>TOP 10 MEJORES RESEÑAS DE HOTELES</h1>
+    <?php include("config/hotel.php"); ?>
+  </div>
+
+  <div class="paquetes-center" style="display:none">
+    <h1>TOP 10 MEJORES RESEÑAS DE PAQUETES</h1>
+    <?php include("config/packages.php"); ?>
+  </div>
+  
+=======
  <div class="paquetes-center">
 
 
@@ -101,6 +121,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 ?>
 </div>
+>>>>>>> 92ff3c01955954ec0dda45055027e42839dbd916
   
   <script>
     const list = document.querySelectorAll('.list');

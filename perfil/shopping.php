@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../.css/dashboard.css">
 
 
-  <title>PrestigeTravels</title>
+  <title>Historial | PrestigeTravels</title>
 
   <!-- Font Awesome -->
   <link
@@ -67,7 +67,7 @@
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
-            <span class="text">Paquetes</span>
+            <span class="text">Top 10</span>
           </a>
         </li>
   

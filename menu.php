@@ -19,7 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href=".css/Navegator.css">
-  <title>PrestigeTravels</title>
+  <link rel="stylesheet" href=".css/Naveg.css">
+  <title>Buscar | PrestigeTravels</title>
 
 </head>
 <body>
@@ -44,7 +45,7 @@
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
-            <span class="text">Paquetes</span>
+            <span class="text">Top 10</span>
           </a>
         </li>
   

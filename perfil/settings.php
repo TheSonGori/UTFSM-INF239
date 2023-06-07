@@ -1,4 +1,5 @@
 <?php
+  include("../config/config.php");
 
   if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -8,11 +9,11 @@
     header("Location: index.php");
     exit;
   }else{
+    $id = $_SESSION['id'];
     $nombre = $_SESSION['usuario'];
     $correo =  $_SESSION['email'];
     $cumple = $_SESSION['birthday'];
   }
-  
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
   <link rel="stylesheet" href="../.css/settings.css">
 
 
-  <title>PrestigeTravels</title>
+  <title>Configuracion | PrestigeTravels</title>
 
   <!-- Font Awesome -->
   <link
@@ -68,7 +69,7 @@
             <span class="icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
-            <span class="text">Paquetes</span>
+            <span class="text">Top 10</span>
           </a>
         </li>
   
@@ -149,7 +150,8 @@
 
     <div class="settings-center">
       <div class="form_container">
-        <form method="POST" action="../config/profile.php">
+        <form action="../config/profile.php" method="post" >
+          <b><label>INFORMACIÓN USUARIO</label></b>
           <div class="input_box">
             <label>Nombre:</label>
             <input type="text" name="name" value="<?php echo $nombre; ?>" required><br>
@@ -166,21 +168,19 @@
           </div>
 
           <div class="input_box">
-            <label>Cumpleaños:</label>
+            <label>Fecha de Nacimiento:</label>
             <input type="date" name="dateofbirthday" value="<?php echo $cumple; ?>" required><br>
           </div>
 
-          <div class="button_wrapper">
-            <input type="submit" class="button" name="Actualizar" id="Actualizar" value="Actualizar"/>
-            <div class="progress_bar"></div>
-          </div>
+          <input type="submit" class="button" name="Actualizar" value="Actualizar"/>
+
         </form>
 
-        <form method="POST" action="../config/delete.php" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">
-            <span class="delete-button" onclick="this.parentNode.submit();">Eliminar Usuario</span>
+        <form method="post" action="../config/delete.php" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">
+          <input type="submit" class="button-bad" value="Borrar Usuario"/>
         </form>
+
       </div>
-    
     </div>
 
   

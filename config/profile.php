@@ -6,10 +6,6 @@
     }
     $id = $_SESSION['id'];
 
-    // Obtener los datos actuales del usuario
-    $consulta = mysqli_query($conex, "SELECT * FROM users WHERE Id_User='$id'");
-    $usuario = mysqli_fetch_assoc($consulta);
-
     if (isset($_POST['Actualizar'])) {
         // Obtener los datos enviados por el formulario
         $name = trim($_POST['name']);
@@ -24,9 +20,9 @@
             $_SESSION['email'] = $correo;
             $_SESSION['usuario'] = $name;
             $_SESSION['birthday'] = $date;
-
-            header("location: ../perfil/settings.php");
         } 
     }
-?>
 
+    //Redirigir a perfil
+    header("location: ../perfil.php");
+?>
