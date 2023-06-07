@@ -25,7 +25,6 @@
 
   <link rel="stylesheet" href=".css/Navegator.css">
   <link rel="stylesheet" href=".css/paquetes.css">
-
   <title>Paquetes | PrestigeTravels</title>
 
 </head>
@@ -86,7 +85,6 @@
     </div>
 
   </header>
-<<<<<<< HEAD
 
   <div class="paquetes-center">
     <h1>TOP 10 MEJORES RESEÑAS DE HOTELES</h1>
@@ -98,30 +96,6 @@
     <?php include("config/packages.php"); ?>
   </div>
   
-=======
- <div class="paquetes-center">
-
-
-<?php
-
-require_once "db.php";
-
-$query = "SELECT * FROM bodega";
-$result = $conexion->query($query);
-
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "<h2>".$row['titulo']."</h2>";
-    echo "<h3>".$row['datos']."</h3>";
-    echo "<h3>Cantidad: ".$row['cantidad']."</h3>";
-    echo "<h2>Precio: ".$row['precio']."</h2>";
-    echo "<h4><a href='add_carrito.php?id=" . $row["id"] . "'>Agregar al carrito</a></h4>";
-    echo "<h4><a href='add_wishlist.php?id=" . $row["id"] . "'>Agregar a la wishlist</a></h4>";
-    echo "<hr>";
-}
-
-?>
-</div>
->>>>>>> 92ff3c01955954ec0dda45055027e42839dbd916
   
   <script>
     const list = document.querySelectorAll('.list');
