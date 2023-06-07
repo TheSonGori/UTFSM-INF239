@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="../.css/Navegator.css">
   <link rel="stylesheet" href="../.css/dashboard.css">
 
-
   <title>WishList | PrestigeTravels</title>
 
   <!-- Font Awesome -->
