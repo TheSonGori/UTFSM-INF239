@@ -1,4 +1,4 @@
-# UTFSM - Inf239
+# UTFSM - INF239
 
 ## Datos
 - Nombre Asignatura: Bases de Datos.
